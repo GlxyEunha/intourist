@@ -1075,9 +1075,9 @@ address {
 
   .package-card {
     display: grid;
-    grid-template-columns: 1.3fr 1.5fr 1fr;
+    grid-template-columns: 1.3fr 1.5fr;
   }
-
+  
   .package-card .card-banner { height: 100%; }
 
   .package-card .card-content { padding: 40px; }
