@@ -27,7 +27,7 @@
   --oxford-blue: hsl(208, 97%, 12%);
   --yale-blue: hsl(214, 72%, 33%);
   --blue-ncs: hsl(197, 100%, 36%);
-  --gunmetal: hsl(206, 34%, 20%);
+  --gunmetal: hsl(214, 72%, 33%);
   --gainsboro: hsl(0, 0%, 88%);
   --cultured: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
@@ -336,9 +336,9 @@ body { background: var(--white); }
 
 .nav-close-btn ion-icon { --ionicon-stroke-width: 80px; }
 
-.navbar-list { border-top: 1px solid hsla(0, 0%, 0%, 0.1); }
+.navbar-list { border-top: 1px solid hsla(0, 0%, 0%, 0.1);}
 
-.navbar-list li { border-bottom: 1px solid hsla(0, 0%, 0%, 0.1); }
+.navbar-list li { border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);}
 
 .navbar-link {
   padding: 15px 20px;
@@ -631,6 +631,24 @@ body { background: var(--white); }
 }
 
 .package .btn { margin-inline: auto; }
+.form-select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Membuat bentuk agak oval */
+  background-color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin: 10px 0;
+  width: 100%; /* atau atur ukuran sesuai keperluan */
+  max-width: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-select:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
 
 
 

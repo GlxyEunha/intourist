@@ -1,0 +1,8 @@
+PAGE 1:
+- landing page
+- muncul rekomendasi Utama (grafik pengunjung 5 hari terakhir, crowded/nggak, rating)
+
+PAGE 2:
+- tombol lihat wisata lain (list, gambar, rating, crowded/nggak)
+- muncul pop up umpan balik pengguna
+

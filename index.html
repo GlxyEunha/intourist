@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tourly - Travel agancy</title>
+  <title>INTOURIST</title>
 
   <!-- 
     - favicon
@@ -29,221 +29,115 @@
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!--- #HEADER-->
   <header class="header" data-header>
 
     <div class="overlay" data-overlay></div>
-
+  
     <div class="header-top">
-      <div class="container">
-
-        <a href="tel:+01123456790" class="helpline-box">
-
-          <div class="icon-box">
-            <ion-icon name="call-outline"></ion-icon>
-          </div>
-
-          <div class="wrapper">
-            <p class="helpline-title">For Further Inquires :</p>
-
-            <p class="helpline-number">+01 (123) 4567 90</p>
-          </div>
-
-        </a>
-
-        <a href="#" class="logo">
-          <img src="./assets/images/logo.svg" alt="Tourly logo">
-        </a>
-
-        <div class="header-btn-group">
-
-          <button class="search-btn" aria-label="Search">
-            <ion-icon name="search"></ion-icon>
-          </button>
-
+      <div class="container" style="position: relative; display: flex; justify-content: center; align-items: center; height: 60px;">  
+        <!-- Nama aplikasi di tengah -->
+        <h1 style="margin: 0; font-size: 24px; color: white; position: absolute; left: 50%; transform: translateX(-50%);">
+          INTOURIST
+        </h1>
+  
+        <!-- Tombol menu di kanan -->
+        <div class="header-btn-group" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);">
           <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
             <ion-icon name="menu-outline"></ion-icon>
           </button>
-
         </div>
-
+  
       </div>
     </div>
-
+  
+    <!-- Script waktu realtime -->
+    <script>
+      function updateDateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString('id-ID', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        });
+        const time = now.toLocaleTimeString('id-ID');
+        document.getElementById('datetime').innerText = `${date} ${time}`;
+      }
+  
+      setInterval(updateDateTime, 1000);
+      updateDateTime(); // Jalankan saat halaman pertama kali dimuat
+    </script>
+  
     <div class="header-bottom">
-      <div class="container">
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+  
+        <!-- Waktu realtime menggantikan sosmed -->
+        <div id="datetime" style="font-size: 14px; color: rgb(48, 152, 233);"></div>
+  
+        <!-- Menu Navigasi -->
         <nav class="navbar" data-navbar>
-
+  
           <div class="navbar-top">
-
-            <a href="#" class="logo">
-              <img src="./assets/images/logo-blue.svg" alt="Tourly logo">
+  
+            <!-- Logo -->
+            <a href="#" class="logo" style="font-size: 24px; font-weight: bold; color: #4383be; text-decoration: none;">
+              INTOURIST
             </a>
-
+  
+            <!-- Tombol tutup -->
             <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
               <ion-icon name="close-outline"></ion-icon>
             </button>
-
+  
           </div>
-
+  
+          <!-- Daftar menu -->
           <ul class="navbar-list">
-
-            <li>
-              <a href="#home" class="navbar-link" data-nav-link>home</a>
-            </li>
-
-            <li>
-              <a href="#" class="navbar-link" data-nav-link>about us</a>
-            </li>
-
-            <li>
-              <a href="#destination" class="navbar-link" data-nav-link>destination</a>
-            </li>
-
-            <li>
-              <a href="#package" class="navbar-link" data-nav-link>packages</a>
-            </li>
-
-            <li>
-              <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
-            </li>
-
-            <li>
-              <a href="#contact" class="navbar-link" data-nav-link>contact us</a>
-            </li>
-
+  
+            <li><a href="#home" class="navbar-link" data-nav-link>home</a></li>
+            <li><a href="#destination" class="navbar-link" data-nav-link>destinasi populer</a></li>
+            <li><a href="#gallery" class="navbar-link" data-nav-link>galeri</a></li>
+            <li><a href="#package" class="navbar-link" data-nav-link>rekomendasi</a></li>
+  
           </ul>
-
+  
         </nav>
-
-        <button class="btn btn-primary">Book Now</button>
-
+  
+        <!-- Tombol Book Now -->
+        <a href="#package"><button class="btn btn-primary">REKOMENDASI WISATA</button></a>
+  
       </div>
     </div>
-
+  
   </header>
-
-
-
-
+  
 
   <main>
     <article>
 
-      <!-- 
-        - #HERO
-      -->
+      <!---HERO SECTION-->
 
       <section class="hero" id="home">
         <div class="container">
 
-          <h2 class="h1 hero-title">Journey to explore world</h2>
+          <h2 class="h1 hero-title">Intelligent Tourism System</h2>
 
           <p class="hero-text">
-            Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos
-            voluptatibus habitant?
-            Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
-          </p>
-
-          <div class="btn-group">
-            <button class="btn btn-primary">Learn more</button>
-
-            <button class="btn btn-secondary">Book now</button>
-          </div>
-
+            Jelajahi destinasi wisata dengan cara yang lebih cerdas bersama <strong>INTOURIST</strong> — sistem rekomendasi wisata berbasis kecerdasan buatan yang dirancang untuk membantu Anda menemukan destinasi wisata terbaik sesuai minat dan preferensi pribadi!</p>
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #TOUR SEARCH
-      -->
-
-      <section class="tour-search">
-        <div class="container">
-
-          <form action="" class="tour-search-form">
-
-            <div class="input-wrapper">
-              <label for="destination" class="input-label">Search Destination*</label>
-
-              <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
-                class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="people" class="input-label">Pax Number*</label>
-
-              <input type="number" name="people" id="people" required placeholder="No.of People" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="checkin" class="input-label">Checkin Date**</label>
-
-              <input type="date" name="checkin" id="checkin" required class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="checkout" class="input-label">Checkout Date*</label>
-
-              <input type="date" name="checkout" id="checkout" required class="input-field">
-            </div>
-
-            <button type="submit" class="btn btn-secondary">Inquire now</button>
-
-          </form>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #POPULAR
-      -->
+      <!---WISATA POPULER SECTION-->
 
       <section class="popular" id="destination">
         <div class="container">
 
-          <p class="section-subtitle">Uncover place</p>
+          <p class="section-subtitle">Temukan Tempat</p>
 
-          <h2 class="h2 section-title">Popular destination</h2>
+          <h2 class="h2 section-title">Destinasi Populer</h2>
 
           <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
+            Jelajahi berbagai destinasi wisata populer yang banyak diminati wisatawan. Temukan tempat-tempat menarik yang sesuai dengan minat Anda, mulai dari wisata alam, sejarah, hingga hiburan di berbagai daerah.
           </p>
 
           <ul class="popular-list">
@@ -252,7 +146,7 @@
               <div class="popular-card">
 
                 <figure class="card-img">
-                  <img src="./assets/images/popular-1.jpg" alt="San miguel, italy" loading="lazy">
+                  <img src="./assets/images/popular-1.jpg" alt="Kota Lama" loading="lazy">
                 </figure>
 
                 <div class="card-content">
@@ -266,15 +160,15 @@
                   </div>
 
                   <p class="card-subtitle">
-                    <a href="#">Italy</a>
+                    <a href="#">Semarang</a>
                   </p>
 
                   <h3 class="h3 card-title">
-                    <a href="#">San miguel</a>
+                    <a href="#">Kota Lama</a>
                   </h3>
 
                   <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                    Kawasan wisata bersejarah dengan arsitektur khas Eropa peninggalan kolonial Belanda
                   </p>
 
                 </div>
@@ -286,7 +180,7 @@
               <div class="popular-card">
 
                 <figure class="card-img">
-                  <img src="./assets/images/popular-2.jpg" alt="Burj khalifa, dubai" loading="lazy">
+                  <img src="./assets/images/popular-2.jpg" alt="Umbul Sidomukti" loading="lazy">
                 </figure>
 
                 <div class="card-content">
@@ -300,15 +194,15 @@
                   </div>
 
                   <p class="card-subtitle">
-                    <a href="#">Dubai</a>
+                    <a href="#">Bandungan</a>
                   </p>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Burj khalifa</a>
+                    <a href="#">Umbul Sidomukti</a>
                   </h3>
 
                   <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                    Kawasan wisata alam pegunungan di lereng Gunung Ungaran
                   </p>
 
                 </div>
@@ -320,7 +214,7 @@
               <div class="popular-card">
 
                 <figure class="card-img">
-                  <img src="./assets/images/popular-3.jpg" alt="Kyoto temple, japan" loading="lazy">
+                  <img src="./assets/images/popular-3.jpg" alt="Candi Gedong Songo" loading="lazy">
                 </figure>
 
                 <div class="card-content">
@@ -334,300 +228,37 @@
                   </div>
 
                   <p class="card-subtitle">
-                    <a href="#">Japan</a>
+                    <a href="#">Bandungan</a>
                   </p>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Kyoto temple</a>
+                    <a href="#">Candi Gedong Songo</a>
                   </h3>
 
                   <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                    Sebuah kompleks bangunan candi peninggalan budaya Hindu
                   </p>
 
                 </div>
 
               </div>
             </li>
-
           </ul>
-
-          <button class="btn btn-primary">More destintion</button>
 
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #PACKAGE
-      -->
-
-      <section class="package" id="package">
-        <div class="container">
-
-          <p class="section-subtitle">Popular Packeges</p>
-
-          <h2 class="h2 section-title">Checkout Our Packeges</h2>
-
-          <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
-          </p>
-
-          <ul class="package-list">
-
-            <li>
-              <div class="package-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/packege-1.jpg" alt="Experience The Great Holiday On Beach" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Experience The Great Holiday On Beach</h3>
-
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-price">
-
-                  <div class="wrapper">
-
-                    <p class="reviews">(25 reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-
-                  </div>
-
-                  <p class="price">
-                    $750
-                    <span>/ per person</span>
-                  </p>
-
-                  <button class="btn btn-secondary">Book Now</button>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="package-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/packege-2.jpg" alt="Summer Holiday To The Oxolotan River" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
-
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-price">
-
-                  <div class="wrapper">
-
-                    <p class="reviews">(20 reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-
-                  </div>
-
-                  <p class="price">
-                    $520
-                    <span>/ per person</span>
-                  </p>
-
-                  <button class="btn btn-secondary">Book Now</button>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="package-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/packege-3.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
-
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-
-                  </ul>
-
-                </div>
-
-                <div class="card-price">
-
-                  <div class="wrapper">
-
-                    <p class="reviews">(40 reviews)</p>
-
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-
-                  </div>
-
-                  <p class="price">
-                    $660
-                    <span>/ per person</span>
-                  </p>
-
-                  <button class="btn btn-secondary">Book Now</button>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-          <button class="btn btn-primary">View All Packages</button>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #GALLERY
-      -->
+      <!--GALERI SECTION-->
 
       <section class="gallery" id="gallery">
         <div class="container">
 
-          <p class="section-subtitle">Photo Gallery</p>
+          <p class="section-subtitle">Galeri Foto</p>
 
-          <h2 class="h2 section-title">Photo's From Travellers</h2>
+          <h2 class="h2 section-title">Foto dari Wisatawan</h2>
 
           <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
+            Keseruan para wisatawan saat menjelajahi berbagai destinasi menarik
           </p>
 
           <ul class="gallery-list">
@@ -652,7 +283,7 @@
 
             <li class="gallery-item">
               <figure class="gallery-image">
-                <img src="./assets/images/gallery-4.jpg" alt="Gallery image">
+                <img src="./assets/images/gallery-4.jpeg" alt="Gallery image">
               </figure>
             </li>
 
@@ -667,138 +298,310 @@
         </div>
       </section>
 
+      <!--REKOMENDASI WISATA SECTION-->
 
+      <!-- REKOMENDASI WISATA SECTION -->
+<section class="package" id="package">
+  <div class="container">
 
+    <p class="section-subtitle">Temukan</p>
+    <h2 class="h2 section-title">Rekomendasi Destinasi Wisata</h2>
+    <p class="section-text">
+      Dapatkan rekomendasi destinasi wisata yang sesuai dengan lokasi dan kondisi Anda!
+    </p>
 
+    <!-- Filter Dropdown -->
+    <div style="display: flex; justify-content: center; margin: 40px 0;">
+      <div class="card-filter" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        <select id="selectKota" class="form-select">
+          <option value="" disabled selected>Pilih Daerah</option>
+          <option value="Semarang">Semarang</option>
+          <option value="Ungaran">Ungaran</option>
+          <option value="Bandungan">Bandungan</option>
+          <option value="Bawen">Bawen</option>
+          <option value="Ambarawa">Ambarawa</option>
+        </select>
 
-      <!-- 
-        - #CTA
-      -->
+        <select id="selectKategori" class="form-select">
+          <option value="" disabled selected>Pilih Kategori</option>
+          <option value="alam">Alam</option>
+          <option value="sejarah">Sejarah</option>
+          <option value="hiburan">Hiburan</option>
+        </select>
 
-      <section class="cta" id="contact">
-        <div class="container">
+        <select id="selectCuaca" class="form-select">
+          <option value="" disabled selected>Pilih Cuaca</option>
+          <option value="cerah">Cerah</option>
+          <option value="berawan">Berawan</option>
+          <option value="hujan">Hujan</option>
+        </select>
 
-          <div class="cta-content">
-            <p class="section-subtitle">Call To Action</p>
+        <button class="btn btn-primary" onclick="tampilkanRekomendasi()">Dapatkan Rekomendasi</button>
+      </div>
+    </div>
 
-            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+    <!-- Rekomendasi Utama -->
+    <div id="rekomendasiUtama" style="display: none;">
+      <div class="package-card">
+        <figure class="card-banner">
+          <img id="gambarWisata" src="assets/images/wisata1.jpg" alt="Destinasi Rekomendasi">
+        </figure>
 
-            <p class="section-text">
-              Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
-              laudantium. Sit ornare
-              mollitia tenetur, aptent.
-            </p>
-          </div>
-
-          <button class="btn btn-secondary">Contact Us !</button>
-
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-
-    <div class="footer-top">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" alt="Tourly logo">
-          </a>
-
-          <p class="footer-text">
-            Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
-            at
-            perferendis, pretium, aenean aut ultrices.
+        <div class="card-content">
+          <h3 class="h3 card-title" id="judulWisata">Nama Wisata</h3>
+          <p class="card-text" id="deskripsiWisata">
+            Deskripsi akan muncul di sini.
           </p>
 
-        </div>
-
-        <div class="footer-contact">
-
-          <h4 class="contact-title">Contact Us</h4>
-
-          <p class="contact-text">
-            Feel free to contact and reach us !!
-          </p>
-
-          <ul>
-
-            <li class="contact-item">
-              <ion-icon name="call-outline"></ion-icon>
-
-              <a href="tel:+01123456790" class="contact-link">+01 (123) 4567 90</a>
+          <ul class="card-meta-list">
+            <li class="card-meta-item">
+              <div class="meta-box">
+                <ion-icon name="people-circle-outline"></ion-icon>
+                <p id="statusWisata">-</p>
+              </div>
             </li>
-
-            <li class="contact-item">
-              <ion-icon name="mail-outline"></ion-icon>
-
-              <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+            <li class="card-meta-item">
+              <div class="meta-box">
+                <ion-icon name="star"></ion-icon>
+                <p id="ratingWisata">-</p>
+              </div>
             </li>
-
-            <li class="contact-item">
-              <ion-icon name="location-outline"></ion-icon>
-
-              <address>3146 Koontz, California</address>
-            </li>
-
           </ul>
 
+          <br>
+          <!-- Grafik -->
+          <canvas id="chartPengunjung" height="200"></canvas>
         </div>
-
-        <div class="footer-form">
-
-          <p class="form-text">
-            Subscribe our newsletter for more update & news !!
-          </p>
-
-          <form action="" class="form-wrapper">
-            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
-
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
-          </form>
-
-        </div>
-
       </div>
-    </div>
 
+    <!-- Tombol untuk melihat wisata lainnya -->
+    <div style="text-align: center; margin-top: 20px;">
+      <button class="btn btn-primary">Lihat Wisata Lainnya</button>
+    </div>
+  </div>
+
+  <!-- Wisata Lainnya -->
+  <ul class="package-list" id="listWisataLainnya" style="display: none; margin-top: 30px;">
+    <li>
+      <div class="package-card">
+        <figure class="card-banner">
+          <img src="assets/images/wisata2.jpg" alt="Pantai Marina">
+        </figure>
+        <div class="card-content">
+          <h3 class="h3 card-title">Pantai Marina</h3>
+          <p class="card-text">Tempat santai favorit keluarga di tepi pantai.</p>
+          <ul class="card-meta-list">
+            <li class="card-meta-item">
+              <div class="meta-box">
+                <ion-icon name="people-circle-outline"></ion-icon>
+                <p>Santai</p>
+              </div>
+            </li>
+            <li class="card-meta-item">
+              <div class="meta-box">
+                <ion-icon name="star"></ion-icon>
+                <p>4.5</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <!-- Tambahkan wisata lainnya di sini -->
+  </ul>
+
+  </div>
+</section>
+
+<!-- Ionicons & Chart.js -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const wisataData = {
+    "Semarang": {
+      "alam": [["Pantai Marina", 4.7], ["Brown Canyon", 4.6]],
+      "sejarah": [["Lawang Sewu", 4.8], ["Sam Poo Kong", 4.5]],
+      "hiburan": [["Simpang Lima", 4.2], ["Wonderia", 4.1]]
+    },
+    "Ungaran": {
+      "alam": [["Watu Gunung", 4.7], ["Bukit Cinta", 4.5]],
+      "sejarah": [["Candi Gedong Songo", 4.7]],
+      "hiburan": [["Kolam Renang Tirto Argo", 4.3]]
+    },
+    "Bandungan": {
+      "alam": [["Umbul Sidomukti", 4.9]],
+      "sejarah": [["Candi Gedong Songo", 4.4]],
+      "hiburan": [["Kampung Kopi Banaran", 4.6]]
+    },
+    "Bawen": {
+      "alam": [["Rawa Pening", 4.5]],
+      "sejarah": [["Eling Bening", 4.3]],
+      "hiburan": [["Dusun Semilir", 4.8]]
+    },
+    "Ambarawa": {
+      "alam": [["Goa Maria Kerep", 4.5]],
+      "sejarah": [["Museum Kereta Api", 4.7], ["Benteng Pendem", 4.2]],
+      "hiburan": [["Taman Wisata Rawa Pening", 4.4]]
+    }
+  };
+
+  const deskripsiDummy = {
+    "Pantai Marina": "Tempat santai favorit keluarga di tepi pantai.",
+    "Brown Canyon": "Pemandangan unik bekas pertambangan yang menawan.",
+    "Lawang Sewu": "Bangunan bersejarah yang ikonik di Semarang.",
+    "Sam Poo Kong": "Kelenteng megah dengan nilai sejarah tinggi.",
+    "Simpang Lima": "Pusat keramaian dan kuliner malam Semarang.",
+    "Wonderia": "Taman hiburan keluarga dengan berbagai wahana.",
+    "Watu Gunung": "Wisata alam dengan kolam dan pemandangan bukit.",
+    "Bukit Cinta": "Spot romantis dengan pemandangan danau indah.",
+    "Candi Gedong Songo": "Kompleks candi Hindu dengan udara sejuk pegunungan.",
+    "Kolam Renang Tirto Argo": "Tempat rekreasi air keluarga di Ungaran.",
+    "Umbul Sidomukti": "Kolam renang alam dengan panorama pegunungan.",
+    "Kampung Kopi Banaran": "Wisata edukasi kopi dan kebun teh.",
+    "Rawa Pening": "Danau alami dengan pesona alam yang menenangkan.",
+    "Eling Bening": "Tempat makan dengan panorama indah Ambarawa.",
+    "Dusun Semilir": "Wisata modern dengan konsep eco-park.",
+    "Goa Maria Kerep": "Tempat ziarah religi di Ambarawa.",
+    "Museum Kereta Api": "Museum dengan koleksi lokomotif bersejarah.",
+    "Benteng Pendem": "Benteng peninggalan Belanda yang tersembunyi.",
+    "Taman Wisata Rawa Pening": "Wisata keluarga dekat danau Rawa Pening."
+  };
+
+  const statusDummy = {
+    "Pantai Marina": "Longgar",
+    "Brown Canyon": "Longgar",
+    "Lawang Sewu": "Ramai",
+    "Sam Poo Kong": "Ramai",
+    "Simpang Lima": "Ramai",
+    "Wonderia": "Longgar",
+    "Watu Gunung": "Longgar",
+    "Bukit Cinta": "Longgar",
+    "Candi Gedong Songo": "Ramai",
+    "Kolam Renang Tirto Argo": "Ramai",
+    "Umbul Sidomukti": "Ramai",
+    "Kampung Kopi Banaran": "Longgar",
+    "Rawa Pening": "Ramai",
+    "Eling Bening": "Longgar",
+    "Dusun Semilir": "Ramai",
+    "Goa Maria Kerep": "Longgar",
+    "Museum Kereta Api": "Longgar",
+    "Benteng Pendem": "Longgar",
+    "Taman Wisata Rawa Pening": "Ramai"
+  };
+
+  let chart = null;
+
+  function tampilkanRekomendasi() {
+    const kota = document.getElementById("selectKota").value;
+    const kategori = document.getElementById("selectKategori").value;
+
+    if (!kota || !kategori) {
+      alert("Silakan pilih daerah dan kategori terlebih dahulu.");
+      return;
+    }
+
+    const daftarWisata = wisataData[kota][kategori];
+    const rekomendasi = daftarWisata.sort((a, b) => b[1] - a[1])[0]; // ambil 1 terbaik
+    const [nama, rating] = rekomendasi;
+
+    // Update konten UI
+    document.getElementById("judulWisata").innerText = nama;
+    document.getElementById("deskripsiWisata").innerText = deskripsiDummy[nama] || "Deskripsi tidak tersedia.";
+    document.getElementById("statusWisata").innerText = statusDummy[nama] || "-";
+    document.getElementById("ratingWisata").innerText = rating;
+    document.getElementById("rekomendasiUtama").style.display = "block";
+
+    // Update gambar (gunakan logika sendiri untuk map nama ke gambar)
+    document.getElementById("gambarWisata").src = "assets/images/wisata1.jpg";
+
+    // Ambil tanggal 5 hari terakhir
+    function getLast5DaysLabels() {
+      const days = [];
+      const today = new Date();
+
+      for (let i = 4; i >= 0; i--) {
+        const d = new Date(today);
+        d.setDate(today.getDate() - i);
+
+        const day = d.toLocaleDateString('id-ID', {
+          weekday: 'short', // misalnya "Sen"
+          day: '2-digit',
+          month: 'short'
+        });
+
+        days.push(day); // contoh: "Sen, 03 Apr"
+      }
+
+      return days;
+    }
+
+    // Buat grafik pengunjung
+    const ctx = document.getElementById('chartPengunjung').getContext('2d');
+    if (chart !== null) {
+      chart.destroy();
+    }
+
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: getLast5DaysLabels(),
+        datasets: [{
+          label: 'Jumlah Pengunjung',
+          data: [120, 150, 180, 90, 200], // Sesuaikan datanya sesuai tempat wisata
+          backgroundColor: 'rgba(78, 115, 223, 0.2)',
+          borderColor: 'rgba(78, 115, 223, 1)',
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Jumlah Pengunjung'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Tanggal'
+            }
+          }
+        }
+      }
+    });
+
+  }
+</script>
+
+  <!---FOOTER-->
+
+  <footer class="footer">
+    
     <div class="footer-bottom">
       <div class="container">
-
-        <p class="copyright">
-          &copy; 2022 <a href="">codewithsadee</a>. All rights reserved
+        <p class="copyright" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+          <span style="font-size: 16px;">&copy;</span>
+          <span id="year"></span>
+          <a href="" style="text-decoration: none; color: inherit;">Intourist</a>.
+          <span>Semua hak dilindungi.</span>
         </p>
-
-        <ul class="footer-bottom-list">
-
-          <li>
-            <a href="#" class="footer-bottom-link">Privacy Policy</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-bottom-link">Term & Condition</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-bottom-link">FAQ</a>
-          </li>
-
-        </ul>
-
       </div>
     </div>
+    
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    
 
   </footer>
 
