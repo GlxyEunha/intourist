@@ -1,0 +1,73 @@
+function tampilkanWisataLainnya() {
+    const kota = document.getElementById("selectKota").value;
+    const namaUtama = document.getElementById("judulWisata").innerText.trim().toLowerCase();
+  
+    if (!kota) {
+      alert("Silakan pilih kota terlebih dahulu.");
+      return;
+    }
+  
+    const listContainer = document.getElementById("listWisataLainnya");
+    listContainer.innerHTML = "";
+  
+    let wisataList = [];
+  
+    const kategoriList = wisataData[kota];
+    for (const kategori in kategoriList) {
+      for (const cuaca in kategoriList[kategori]) {
+        kategoriList[kategori][cuaca].forEach((wisata) => {
+          const [nama, rating] = wisata;
+  
+          // Cek apakah nama sama dengan nama rekomendasi utama
+          if (nama.trim().toLowerCase() !== namaUtama) {
+            wisataList.push({
+              nama: nama,
+              rating: rating,
+              kategori: kategori
+            });
+          }
+        });
+      }
+    }
+  
+    if (wisataList.length === 0) {
+      listContainer.innerHTML = "<li>Tidak ada wisata lainnya yang tersedia.</li>";
+    } else {
+      wisataList.forEach(({ nama, rating, kategori }) => {
+        const gambar = gambarWisata[nama] || "assets/images/default.jpg";
+        const deskripsi = deskripsiDummy[nama] || "Deskripsi tidak tersedia.";
+        const kategoriLabel = kategori.charAt(0).toUpperCase() + kategori.slice(1);
+  
+        listContainer.innerHTML += `
+          <li>
+            <div class="package-card">
+              <figure class="card-banner">
+                <img src="${gambar}" alt="${nama}">
+              </figure>
+              <div class="card-content">
+                <h3 class="h3 card-title">${nama}</h3>
+                <p class="card-text">${deskripsi}</p>
+                <ul class="card-meta-list">
+                  <li class="card-meta-item">
+                    <div class="meta-box">
+                      <ion-icon name="people-circle-outline"></ion-icon>
+                      <p>${kategoriLabel}</p>
+                    </div>
+                  </li>
+                  <li class="card-meta-item">
+                    <div class="meta-box">
+                      <ion-icon name="star"></ion-icon>
+                      <p>${rating}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        `;
+      });
+    }
+  
+    listContainer.style.display = "block";
+  }
+  

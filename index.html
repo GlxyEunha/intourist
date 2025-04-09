@@ -344,7 +344,7 @@
     <div id="rekomendasiUtama" style="display: none;">
       <div class="package-card">
         <figure class="card-banner">
-          <img id="gambarWisata" src="assets/images/wisata1.jpg" alt="Destinasi Rekomendasi">
+          <img id="gambarWisata" src="" alt="Destinasi Rekomendasi">
         </figure>
 
         <div class="card-content">
@@ -376,7 +376,7 @@
 
       <!-- Tombol untuk melihat wisata lainnya -->
       <div style="text-align: center; margin-top: 20px;">
-        <button class="btn btn-primary" id="tombolLihatLainnya">Lihat Wisata Lainnya</button>
+        <button onclick="tampilkanWisataLainnya()" class="btn btn-primary">Lihat Wisata Lainnya</button>
       </div>
 
   </div>
@@ -421,30 +421,112 @@
 <script>
   const wisataData = {
     "Semarang": {
-      "alam": [["Pantai Marina", 4.7], ["Brown Canyon", 4.6]],
-      "sejarah": [["Lawang Sewu", 4.8], ["Sam Poo Kong", 4.5]],
-      "hiburan": [["Simpang Lima", 4.2], ["Wonderia", 4.1]]
+      "alam": {
+        "cerah": [["Pantai Marina", 4.7]],
+        "berawan": [["Brown Canyon", 4.6]],
+        "hujan": []
+      },
+      "sejarah": {
+        "cerah": [["Lawang Sewu", 4.8]],
+        "berawan": [["Sam Poo Kong", 4.5]],
+        "hujan": []
+      },
+      "hiburan": {
+        "cerah": [["Simpang Lima", 4.2]],
+        "berawan": [["Wonderia", 4.1]],
+        "hujan": []
+      },
     },
     "Ungaran": {
-      "alam": [["Watu Gunung", 4.7], ["Bukit Cinta", 4.5]],
-      "sejarah": [["Candi Gedong Songo", 4.7]],
-      "hiburan": [["Kolam Renang Tirto Argo", 4.3]]
+      "alam": {
+        "cerah": [["Watu Gunung", 4.7]],
+        "berawan": [["Bukit Cinta", 4.5]],
+        "hujan": []
+      },
+      "sejarah": {
+        "cerah": [["Candi Gedong Songo", 4.7]],
+        "berawan": [],
+        "hujan": []
+      },
+      "hiburan": {
+        "cerah": [["Kolam Renang Tirto Argo", 4.3]],
+        "berawan": [],
+        "hujan": []
+      },
     },
     "Bandungan": {
-      "alam": [["Umbul Sidomukti", 4.9]],
-      "sejarah": [["Candi Gedong Songo", 4.4]],
-      "hiburan": [["Kampung Kopi Banaran", 4.6]]
+      "alam": {
+        "cerah": [["Umbul Sidomukti", 4.9]],
+        "berawan": [],
+        "hujan": []
+      },
+      "sejarah": {
+        "cerah": [["Candi Gedong Songo", 4.4]],
+        "berawan": [],
+        "hujan": []
+      },
+      "hiburan": {
+        "cerah": [["Kampung Kopi Banaran", 4.6]],
+        "berawan": [],
+        "hujan": []
+      },
     },
     "Bawen": {
-      "alam": [["Rawa Pening", 4.5]],
-      "sejarah": [["Eling Bening", 4.3]],
-      "hiburan": [["Dusun Semilir", 4.8]]
+      "alam": {
+        "cerah": [["Rawa Pening", 4.5]],
+        "berawan": [],
+        "hujan": []
+      },
+      "sejarah": {
+        "cerah": [["Eling Bening", 4.3]],
+        "berawan": [],
+        "hujan": []
+      },
+      "hiburan": {
+        "cerah": [["Dusun Semilir", 4.8]],
+        "berawan": [],
+        "hujan": []
+      },
     },
     "Ambarawa": {
-      "alam": [["Goa Maria Kerep", 4.5]],
-      "sejarah": [["Museum Kereta Api", 4.7], ["Benteng Pendem", 4.2]],
-      "hiburan": [["Taman Wisata Rawa Pening", 4.4]]
+      "alam": {
+        "cerah": [["Goa Maria Kerep", 4.5]],
+        "berawan": [],
+        "hujan": []
+      },
+      "sejarah": {
+        "cerah": [["Museum Kereta Api", 4.7]],
+        "berawan": [["Benteng Pendem", 4.2]],
+        "hujan": []
+      },
+      "hiburan": {
+        "cerah": [["Taman Wisata Rawa Pening", 4.4]],
+        "berawan": [],
+        "hujan": []
+      },
     }
+  };
+
+  const gambarWisata = {
+    "Pantai Marina": "assets/images/marina.png",
+    "Brown Canyon": "assets/images/brown-canyon.jpg",
+    "Lawang Sewu": "assets/images/lawang-sewu.jpg",
+    "Sam Poo Kong": "assets/images/sam-poo-kong.jpg",
+    "Simpang Lima": "assets/images/simpang-lima.jpg",
+    "Wonderia": "assets/images/wonderia.jpeg",
+    "Watu Gunung": "assets/images/watu-gunung.jpg",
+    "Bukit Cinta": "assets/images/bukit-cinta.jpg",
+    "Candi Gedong Songo": "assets/images/gedong-songo.jpg",
+    "Kolam Renang Tirto Argo": "assets/images/tirto-argo.jpg",
+    "Umbul Sidomukti": "assets/images/umbul-sidomukti.jpg",
+    "Kampung Kopi Banaran": "assets/images/kampung-kopi.jpg",
+    "Rawa Pening": "assets/images/rawa-pening.jpg",
+    "Eling Bening": "assets/images/eling-bening.jpg",
+    "Dusun Semilir": "assets/images/dusun-semilir.jpg",
+    "Goa Maria Kerep": "assets/images/goa-maria.jpg",
+    "Museum Kereta Api": "assets/images/museum-kereta.jpg",
+    "Benteng Pendem": "assets/images/benteng-pendem.jpg",
+    "Taman Wisata Rawa Pening": "assets/images/taman-rawa-pening.jpg"
   };
 
   const deskripsiDummy = {
@@ -496,13 +578,14 @@
   function tampilkanRekomendasi() {
     const kota = document.getElementById("selectKota").value;
     const kategori = document.getElementById("selectKategori").value;
+    const cuaca = document.getElementById("selectCuaca").value;
 
-    if (!kota || !kategori) {
-      alert("Silakan pilih daerah dan kategori terlebih dahulu.");
+    if (!kota || !kategori || !cuaca) {
+      alert("Silakan pilih daerah, kategori, dan cuaca terlebih dahulu.");
       return;
     }
 
-    const daftarWisata = wisataData[kota][kategori];
+    const daftarWisata = wisataData[kota][kategori][cuaca];
     const rekomendasi = daftarWisata.sort((a, b) => b[1] - a[1])[0]; // ambil 1 terbaik
     const [nama, rating] = rekomendasi;
 
@@ -511,10 +594,14 @@
     document.getElementById("deskripsiWisata").innerText = deskripsiDummy[nama] || "Deskripsi tidak tersedia.";
     document.getElementById("statusWisata").innerText = statusDummy[nama] || "-";
     document.getElementById("ratingWisata").innerText = rating;
+    document.getElementById("gambarWisata").src = gambarWisata[nama] || "assets/images/wisata1.jpg";
     document.getElementById("rekomendasiUtama").style.display = "block";
 
+    document.getElementById("listWisataLainnya").style.display = "none";
+    document.getElementById("listWisataLainnya").innerHTML = "";
+
     // Update gambar (gunakan logika sendiri untuk map nama ke gambar)
-    document.getElementById("gambarWisata").src = "assets/images/wisata1.jpg";
+    // document.getElementById("gambarWisata").src = "assets/images/wisata1.jpg";
 
     // Ambil tanggal 5 hari terakhir
     function getLast5DaysLabels() {
@@ -581,6 +668,82 @@
       }
     });
   }
+
+  function tampilkanWisataLainnya() {
+  const tombol = document.getElementById("tombolLihatLainnya");
+  const kota = document.getElementById("selectKota").value;
+  const namaUtama = document.getElementById("judulWisata").innerText.trim().toLowerCase();
+
+  if (!kota) {
+    alert("Silakan pilih kota terlebih dahulu.");
+    return;
+  }
+
+  const listContainer = document.getElementById("listWisataLainnya");
+  listContainer.innerHTML = "";
+
+  let wisataList = [];
+
+  const kategoriList = wisataData[kota];
+  for (const kategori in kategoriList) {
+    for (const cuaca in kategoriList[kategori]) {
+      kategoriList[kategori][cuaca].forEach((wisata) => {
+        const [nama, rating] = wisata;
+
+        // Cek apakah nama sama dengan nama rekomendasi utama
+        if (nama.trim().toLowerCase() !== namaUtama) {
+          wisataList.push({
+            nama: nama,
+            rating: rating,
+            kategori: kategori
+          });
+        }
+      });
+    }
+  }
+
+  if (wisataList.length === 0) {
+    listContainer.innerHTML = "<li>Tidak ada wisata lainnya yang tersedia.</li>";
+  } else {
+    wisataList.forEach(({ nama, rating, kategori }) => {
+      const gambar = gambarWisata[nama] || "assets/images/default.jpg";
+      const deskripsi = deskripsiDummy[nama] || "Deskripsi tidak tersedia.";
+      const status = statusDummy[nama] || "-";
+      // const kategoriLabel = kategori.charAt(0).toUpperCase() + kategori.slice(1);
+
+      listContainer.innerHTML += `
+        <li>
+          <div class="package-card">
+            <figure class="card-banner">
+              <img src="${gambar}" alt="${nama}">
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">${nama}</h3>
+              <p class="card-text">${deskripsi}</p>
+              <ul class="card-meta-list">
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="people-circle-outline"></ion-icon>
+                    <p>${status}</p>
+                  </div>
+                </li>
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="star"></ion-icon>
+                    <p>${rating}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      `;
+    });
+  }
+
+  listContainer.style.display = "block";
+}
+
 
   document.getElementById("tombolLihatLainnya").addEventListener("click", function () {
     const listWisata = document.getElementById("listWisataLainnya");
