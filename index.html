@@ -374,10 +374,11 @@
         </div>
       </div>
 
-    <!-- Tombol untuk melihat wisata lainnya -->
-    <div style="text-align: center; margin-top: 20px;">
-      <button class="btn btn-primary">Lihat Wisata Lainnya</button>
-    </div>
+      <!-- Tombol untuk melihat wisata lainnya -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn btn-primary" id="tombolLihatLainnya">Lihat Wisata Lainnya</button>
+      </div>
+
   </div>
 
   <!-- Wisata Lainnya -->
@@ -579,8 +580,20 @@
         }
       }
     });
-
   }
+
+  document.getElementById("tombolLihatLainnya").addEventListener("click", function () {
+    const listWisata = document.getElementById("listWisataLainnya");
+
+    // Toggle tampilan: jika hidden, tampilkan, jika sudah tampil, sembunyikan
+    if (listWisata.style.display === "none") {
+      listWisata.style.display = "block";
+      this.textContent = "Sembunyikan Wisata Lainnya"; // ubah teks tombol
+    } else {
+      listWisata.style.display = "none";
+      this.textContent = "Lihat Wisata Lainnya";
+    }
+  });
 </script>
 
   <!---FOOTER-->
