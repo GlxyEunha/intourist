@@ -482,19 +482,19 @@
         const wisataData = {
           "Semarang": {
             "alam": {
-              "cerah": [["Pantai Marina", 4.7]],
-              "berawan": [["Brown Canyon", 4.6]],
-              "hujan": []
+              "cerah": [["Pantai Marina", 4.7], ["Taman Wisata Maerokoco", 4.7], ["Kampung Pelangi", 4.7]],
+              "berawan": [["Brown Canyon", 4.6], ["Goa Kreo", 4.7], ["Pantai Tirang", 4.7], ["Hutan Pinus", 4.7], ["Bukit Diponegoro Hillside", 4.7]],
+              "hujan": [["Pantai Marina", 4.7], ["Pantai Tirang", 4.7]]
             },
             "sejarah": {
-              "cerah": [["Lawang Sewu", 4.8]],
-              "berawan": [["Sam Poo Kong", 4.5]],
-              "hujan": []
+              "cerah": [["Lawang Sewu", 4.8], ["Klenteng Sam Poo Kong", 4.8]],
+              "berawan": [["Kota Lama", 4.5], ["Candi Tugu", 4.5]],
+              "hujan": [["Museum Ranggawarsita", 4.5], ["Museum Perjuangan Mandala Bhakti", 4.5]]
             },
             "hiburan": {
               "cerah": [["Simpang Lima", 4.2]],
-              "berawan": [["Wonderia", 4.1]],
-              "hujan": []
+              "berawan": [["Semarang Contemporary Art Gallery", 4.1], ["Taman Wisata Maerokoco", 4.1]],
+              "hujan": [["Pagoda Avalokitesvara", 4.3], ["Goa Kreo", 4.3]]
             },
           },
           "Ungaran": {
@@ -568,70 +568,64 @@
         };
 
         const gambarWisata = {
-          "Pantai Marina": "assets/images/marina.png",
+          "Pantai Marina": "assets/images/pantai-marina.jpg",
+          "Taman Wisata Maerokoco": "assets/images/maerokoco.jpg",
+          "Kampung Pelangi": "assets/images/kampung-pelangi.jpg",
           "Brown Canyon": "assets/images/brown-canyon.jpg",
+          "Goa Kreo": "assets/images/goa-kreo.jpg",
+          "Pantai Tirang": "assets/images/pantai-tirang.jpg",
+          "Hutan Pinus": "assets/images/hutan-pinus.jpg",
+          "Bukit Diponegoro Hillside": "assets/images/bukit-dipo.jpg",
           "Lawang Sewu": "assets/images/lawang-sewu.jpg",
-          "Sam Poo Kong": "assets/images/sam-poo-kong.jpg",
+          "Klenteng Sam Poo Kong": "assets/images/sam-poo-kong.jpg",
+          "Kota Lama": "assets/images/kota-lama.jpg",
+          "Candi Tugu": "assets/images/candi-tugu.jpg",
+          "Museum Ranggawarsita": "assets/images/museum-ranggawarsita.jpg",
+          "Museum Perjuangan Mandala Bhakti": "assets/images/museum-mandhala.jpg",
           "Simpang Lima": "assets/images/simpang-lima.jpg",
-          "Wonderia": "assets/images/wonderia.jpeg",
-          "Watu Gunung": "assets/images/watu-gunung.jpg",
-          "Bukit Cinta": "assets/images/bukit-cinta.jpg",
-          "Candi Gedong Songo": "assets/images/gedong-songo.jpg",
-          "Kolam Renang Tirto Argo": "assets/images/tirto-argo.jpg",
-          "Umbul Sidomukti": "assets/images/umbul-sidomukti.jpg",
-          "Kampung Kopi Banaran": "assets/images/kampung-kopi.jpg",
-          "Rawa Pening": "assets/images/rawa-pening.jpg",
-          "Eling Bening": "assets/images/eling-bening.jpg",
-          "Dusun Semilir": "assets/images/dusun-semilir.jpg",
-          "Goa Maria Kerep": "assets/images/goa-maria.jpg",
-          "Museum Kereta Api": "assets/images/museum-kereta.jpg",
-          "Benteng Pendem": "assets/images/benteng-pendem.jpg",
-          "Taman Wisata Rawa Pening": "assets/images/taman-rawa-pening.jpg"
-        };
+          "Semarang Contemporary Art Gallery": "assets/images/semarang-art.jpg",
+          "Pagoda Avalokitesvara": "assets/images/pagoda-avalokitesvara.jpg"
+        };        
 
         const deskripsiDummy = {
-          "Pantai Marina": "Tempat santai favorit keluarga di tepi pantai.",
-          "Brown Canyon": "Pemandangan unik bekas pertambangan yang menawan.",
-          "Lawang Sewu": "Bangunan bersejarah yang ikonik di Semarang.",
-          "Sam Poo Kong": "Kelenteng megah dengan nilai sejarah tinggi.",
-          "Simpang Lima": "Pusat keramaian dan kuliner malam Semarang.",
-          "Wonderia": "Taman hiburan keluarga dengan berbagai wahana.",
-          "Watu Gunung": "Wisata alam dengan kolam dan pemandangan bukit.",
-          "Bukit Cinta": "Spot romantis dengan pemandangan danau indah.",
-          "Candi Gedong Songo": "Kompleks candi Hindu dengan udara sejuk pegunungan.",
-          "Kolam Renang Tirto Argo": "Tempat rekreasi air keluarga di Ungaran.",
-          "Umbul Sidomukti": "Kolam renang alam dengan panorama pegunungan.",
-          "Kampung Kopi Banaran": "Wisata edukasi kopi dan kebun teh.",
-          "Rawa Pening": "Danau alami dengan pesona alam yang menenangkan.",
-          "Eling Bening": "Tempat makan dengan panorama indah Ambarawa.",
-          "Dusun Semilir": "Wisata modern dengan konsep eco-park.",
-          "Goa Maria Kerep": "Tempat ziarah religi di Ambarawa.",
-          "Museum Kereta Api": "Museum dengan koleksi lokomotif bersejarah.",
-          "Benteng Pendem": "Benteng peninggalan Belanda yang tersembunyi.",
-          "Taman Wisata Rawa Pening": "Wisata keluarga dekat danau Rawa Pening."
-        };
+          "Pantai Marina": "Pantai populer di Semarang dengan suasana tenang dan cocok untuk menikmati matahari terbenam.",
+          "Taman Wisata Maerokoco": "Miniatur budaya Jawa Tengah yang dikemas dalam taman wisata edukatif.",
+          "Kampung Pelangi": "Perkampungan warna-warni yang Instagramable di tengah kota.",
+          "Brown Canyon": "Tebing eksotik hasil bekas tambang yang menyerupai Grand Canyon versi lokal.",
+          "Goa Kreo": "Goa bersejarah di tengah hutan dengan koloni monyet yang menarik perhatian wisatawan.",
+          "Pantai Tirang": "Pantai tersembunyi dengan pasir halus dan tempat favorit memancing.",
+          "Hutan Pinus": "Area hijau rindang dengan suasana sejuk dan spot foto menarik.",
+          "Bukit Diponegoro Hillside": "Bukit dengan panorama luas kota Semarang dari ketinggian.",
+          "Lawang Sewu": "Bangunan kolonial bersejarah dengan arsitektur megah dan kisah legendaris.",
+          "Klenteng Sam Poo Kong": "Kelenteng terbesar di Semarang yang kaya nilai sejarah dan budaya Tionghoa.",
+          "Kota Lama": "Kawasan bersejarah dengan gedung-gedung kolonial dan suasana tempo dulu.",
+          "Candi Tugu": "Candi kecil peninggalan Hindu yang menjadi saksi sejarah awal kota Semarang.",
+          "Museum Ranggawarsita": "Museum besar dengan koleksi budaya dan sejarah Jawa Tengah.",
+          "Museum Perjuangan Mandala Bhakti": "Museum perjuangan kemerdekaan yang sarat nilai nasionalisme.",
+          "Simpang Lima": "Pusat kegiatan kota Semarang yang ramai dengan pilihan kuliner dan hiburan malam.",
+          "Semarang Contemporary Art Gallery": "Galeri seni modern yang menampilkan karya seniman lokal dan internasional.",
+          "Pagoda Avalokitesvara": "Pagoda megah tujuh tingkat dengan arsitektur khas Tiongkok di area vihara Watugong."
+        };        
 
         const statusDummy = {
           "Pantai Marina": "Longgar",
+          "Taman Wisata Maerokoco": "Ramai",
+          "Kampung Pelangi": "Longgar",
           "Brown Canyon": "Longgar",
+          "Goa Kreo": "Ramai",
+          "Pantai Tirang": "Longgar",
+          "Hutan Pinus": "Longgar",
+          "Bukit Diponegoro Hillside": "Longgar",
           "Lawang Sewu": "Ramai",
-          "Sam Poo Kong": "Ramai",
+          "Klenteng Sam Poo Kong": "Ramai",
+          "Kota Lama": "Ramai",
+          "Candi Tugu": "Longgar",
+          "Museum Ranggawarsita": "Ramai",
+          "Museum Perjuangan Mandala Bhakti": "Longgar",
           "Simpang Lima": "Ramai",
-          "Wonderia": "Longgar",
-          "Watu Gunung": "Longgar",
-          "Bukit Cinta": "Longgar",
-          "Candi Gedong Songo": "Ramai",
-          "Kolam Renang Tirto Argo": "Ramai",
-          "Umbul Sidomukti": "Ramai",
-          "Kampung Kopi Banaran": "Longgar",
-          "Rawa Pening": "Ramai",
-          "Eling Bening": "Longgar",
-          "Dusun Semilir": "Ramai",
-          "Goa Maria Kerep": "Longgar",
-          "Museum Kereta Api": "Longgar",
-          "Benteng Pendem": "Longgar",
-          "Taman Wisata Rawa Pening": "Ramai"
-        };
+          "Semarang Contemporary Art Gallery": "Longgar",
+          "Pagoda Avalokitesvara": "Ramai"
+        };        
 
         let chart = null;
 
