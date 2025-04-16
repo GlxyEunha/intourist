@@ -767,7 +767,73 @@
           "Makam Raden Sigit Widjoyo": "Longgar",
           "Monumen Perjuangan Bawen": "Longgar",
           "Bukit Kendalisodo": "Longgar"
-        };        
+        };
+        
+        const pengunjungData = {
+        "Pantai Marina": [100, 120, 130, 150, 170],
+        "Taman Wisata Maerokoco": [80, 90, 95, 100, 110],
+        "Kampung Pelangi": [50, 60, 70, 60, 65],
+        "Brown Canyon": [40, 45, 50, 55, 60],
+        "Goa Kreo": [90, 100, 105, 110, 115],
+        "Pantai Tirang": [30, 35, 40, 45, 50],
+        "Hutan Pinus": [25, 30, 28, 32, 34],
+        "Bukit Diponegoro Hillside": [20, 22, 23, 24, 25],
+        "Lawang Sewu": [150, 160, 170, 180, 190],
+        "Klenteng Sam Poo Kong": [140, 150, 155, 160, 165],
+        "Kota Lama": [100, 105, 110, 115, 120],
+        "Candi Tugu": [70, 75, 78, 80, 85],
+        "Museum Ranggawarsita": [60, 65, 70, 75, 80],
+        "Museum Perjuangan Mandala Bhakti": [45, 48, 50, 52, 55],
+        "Simpang Lima": [120, 125, 130, 135, 140],
+        "Semarang Contemporary Art Gallery": [90, 92, 94, 96, 98],
+        "Pagoda Avalokitesvara": [60, 65, 68, 70, 75],
+        "Watu Gunung": [130, 135, 138, 140, 145],
+        "Wana Wisata Penggaron": [110, 112, 115, 117, 120],
+        "Taman Serasi": [70, 72, 74, 76, 78],
+        "Bukit Lerep Indah": [55, 60, 65, 68, 70],
+        "Gunung Ungaran": [30, 35, 40, 45, 50],
+        "Curug Lawe": [25, 28, 30, 32, 35],
+        "Curug Semirang": [20, 21, 22, 23, 24],
+        "Kolam Renang Tirto Argo Siwarak": [100, 105, 108, 110, 115],
+        "The Wujil Resort & Conventions": [80, 85, 90, 95, 100],
+        "Gedung Kuning": [40, 42, 44, 46, 48],
+        "Arca Ganesha": [30, 32, 34, 36, 38],
+        "Benteng Willem II": [20, 22, 24, 26, 28],
+        "Sunrise Hill Gedong Songo": [100, 105, 110, 115, 120],
+        "Taman Bunga Celosia": [90, 95, 100, 105, 110],
+        "Setiya Aji Flower Farm": [85, 90, 92, 94, 96],
+        "King Garden": [60, 63, 66, 68, 70],
+        "Alun-alun Bandungan": [100, 105, 110, 112, 115],
+        "Bumi Perkemahan Mawar": [40, 44, 46, 48, 50],
+        "Umbul Sidomukti": [70, 75, 80, 85, 90],
+        "I AMpelgading Homeland": [55, 58, 60, 63, 65],
+        "Florawisata Banyukuning": [30, 32, 34, 36, 38],
+        "Wisata Perantunan": [25, 28, 30, 33, 35],
+        "Ayana Gedong Songo": [110, 115, 120, 125, 130],
+        "Vanaprastha Gedong Songo": [80, 85, 90, 95, 100],
+        "Bandungan Indah Waterpark": [60, 64, 66, 68, 70],
+        "Legok Madu": [50, 52, 54, 56, 58],
+        "Candi Gedong Songo": [100, 105, 110, 115, 120],
+        "Wana Prasta Gedong Songo": [70, 72, 75, 77, 80],
+        "Lisin Gedong Songo": [30, 32, 34, 36, 38],
+        "Wisata Lereng Kelir": [50, 55, 58, 60, 63],
+        "Benteng Fort Willem I": [45, 47, 49, 51, 53],
+        "Alun-alun Ambarawa": [90, 92, 94, 96, 98],
+        "Desa Wisata Bejalen": [40, 45, 48, 50, 52],
+        "Museum Kereta Api Ambarawa": [70, 72, 74, 76, 78],
+        "Monumen Palagan Ambarawa": [30, 32, 34, 36, 38],
+        "Museum Isdiman": [25, 28, 30, 32, 34],
+        "Kampoeng Kopi Banaran": [130, 135, 140, 145, 150],
+        "Kampoeng Rawa": [110, 112, 115, 118, 120],
+        "Eling Bening": [100, 105, 108, 110, 112],
+        "Bukit Cinta": [90, 92, 94, 96, 98],
+        "Dusun Semilir Eco Park": [150, 155, 160, 165, 170],
+        "Agrowisata Sido Muncul": [80, 82, 85, 87, 90],
+        "Cimory Dairy Land": [70, 75, 78, 80, 85],
+        "Makam Raden Sigit Widjoyo": [40, 42, 45, 47, 50],
+        "Monumen Perjuangan Bawen": [35, 38, 40, 42, 45],
+        "Bukit Kendalisodo": [30, 32, 34, 36, 38],
+      };
 
         let chart = null;
 
@@ -821,10 +887,13 @@
           }
 
           // Buat grafik pengunjung
+
           const ctx = document.getElementById('chartPengunjung').getContext('2d');
+
           if (chart !== null) {
             chart.destroy();
           }
+          const dataPengunjung = pengunjungData[nama] || [0, 0, 0, 0, 0];
 
           chart = new Chart(ctx, {
             type: 'line',
@@ -832,7 +901,7 @@
               labels: getLast5DaysLabels(),
               datasets: [{
                 label: 'Jumlah Pengunjung',
-                data: [120, 150, 180, 90, 200], // Sesuaikan datanya sesuai tempat wisata
+                data: dataPengunjung,
                 backgroundColor: 'rgba(78, 115, 223, 0.2)',
                 borderColor: 'rgba(78, 115, 223, 1)',
                 borderWidth: 2,
