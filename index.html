@@ -879,15 +879,18 @@
         listContainer.innerHTML = "";
 
         let wisataList = [];
+        const wisataSet = new Set(); // <-- untuk cek duplikat
 
         const kategoriList = wisataData[kota];
         for (const kategori in kategoriList) {
           for (const cuaca in kategoriList[kategori]) {
             kategoriList[kategori][cuaca].forEach((wisata) => {
               const [nama, rating] = wisata;
+              const namaLower = nama.trim().toLowerCase();
 
-              // Cek apakah nama sama dengan nama rekomendasi utama
-              if (nama.trim().toLowerCase() !== namaUtama) {
+              // Cek apakah sudah ada di set dan bukan wisata utama
+              if (namaLower !== namaUtama && !wisataSet.has(namaLower)) {
+                wisataSet.add(namaLower);
                 wisataList.push({
                   nama: nama,
                   rating: rating,
@@ -905,7 +908,6 @@
             const gambar = gambarWisata[nama] || "assets/images/default.jpg";
             const deskripsi = deskripsiDummy[nama] || "Deskripsi tidak tersedia.";
             const status = statusDummy[nama] || "-";
-            // const kategoriLabel = kategori.charAt(0).toUpperCase() + kategori.slice(1);
 
             listContainer.innerHTML += `
               <li>
@@ -939,7 +941,6 @@
 
         listContainer.style.display = "block";
       }
-
 
         document.getElementById("tombolLihatLainnya").addEventListener("click", function () {
           const listWisata = document.getElementById("listWisataLainnya");
